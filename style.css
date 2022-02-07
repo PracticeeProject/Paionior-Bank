@@ -1,0 +1,28 @@
+.wlc{
+    color:red;
+}
+.form-decorator{
+    box-shadow: 1px 3px 6px black;
+    border-radius:6px;
+}
+.margin-control{
+    margin-left:90px;
+}
+.secend-div{
+    
+}
+.sub-container div{
+    border-radius:10px;
+}
+.deposit{
+    background-color:#3492eb;
+}
+.withdrow{
+    background-color: #eb8934;
+}
+.balance{
+    background-color: #ebe534;
+}
+#account-view{
+    display:none;
+}
