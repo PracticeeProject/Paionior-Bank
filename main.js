@@ -8,6 +8,8 @@ const withdrowButton = document.getElementById('withdrowButton');
 const withdrowInput = document.getElementById('withdrowInput');
 const withdrowBal = document.getElementById('withdrowBal');
 const displayBalance = document.getElementById('displayBalance');
+const withdrowNote = document.getElementById('withdrowNote');
+const dipositNote = document.getElementById('dipositNote');
 
 let dipositNumber = Math.round(dipositBalace.innerHTML);
 const withdrowNumber = Math.round(withdrowBal.innerHTML);
@@ -26,12 +28,14 @@ function depositFildHandeler(){
     const dipositValue = dipositFild.value;
     const dipositeInput = Math.round(dipositValue);
     dipositFild.value = "";
+    withdrowNote.style.display= 'none';
     
-    if(dipositeInput >= 0){
+    if(dipositeInput > 0){
         dipositNumber = dipositNumber + dipositeInput;
         dipositBalace.innerText = dipositNumber;
         displayBalaceFigure = displayBalaceFigure + dipositeInput;
         displayBalance.innerHTML = displayBalaceFigure;
+        dipositNote.style.display= 'block';
     }
 }
 
@@ -39,11 +43,18 @@ function withdrowHandeler(){
     const withdrowInputNumber =Math.round( withdrowInput.value);
     const dipositBalaces = Math.round(dipositBalace.innerHTML);
     withdrowInput.value = '';
-    if(dipositBalaces > 0 && withdrowInputNumber > 0){
+    dipositNote.style.display= 'none';
+    if(dipositBalaces > 0 && withdrowInputNumber > 0 && dipositNumber >= withdrowInputNumber){
         dipositNumber = dipositNumber - withdrowInputNumber;
         dipositBalace.innerText = dipositNumber;
         withdrowBal.innerHTML = withdrowInputNumber;
         displayBalaceFigure = displayBalaceFigure - withdrowInputNumber;
         displayBalance.innerHTML = displayBalaceFigure;
+        withdrowNote.style.display= 'none';
+        withdrowNote.style.display= 'none';
+    
+    }
+    if(dipositBalaces === 0){
+        withdrowNote.style.display= 'block';
     }
 }

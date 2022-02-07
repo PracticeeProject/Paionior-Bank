@@ -23,6 +23,15 @@
 .balance{
     background-color: #ebe534;
 }
+.input-control{
+    height: 228px;
+}
 #account-view{
     display:none;
+}
+#withdrowNote{
+    display: none;
+}
+#dipositNote{
+    display: none;
 }
